@@ -32,8 +32,7 @@ require("./routes/post-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-// db.sequelize.sync({ force: true }).then(function() // force: true drops table each time server is run!
-db.sequelize.sync({  }).then(function() // force: true drops table each time server is run!
+db.sequelize.sync({ force: true }).then(function() // force: true drops table each time server is run!
 {
   app.listen(PORT, function()
   {

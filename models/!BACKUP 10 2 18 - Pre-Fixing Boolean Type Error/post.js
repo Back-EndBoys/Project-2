@@ -1,5 +1,4 @@
 //Other files can access the exported data via requiring this .js file and using Post.PROPERTY.
-//SQL TABLE STUFF MADE HERE!
 module.exports = function(sequelize, DataTypes)
 {
   var Post = sequelize.define("Post",
@@ -18,18 +17,6 @@ module.exports = function(sequelize, DataTypes)
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
-    },
-    upvote:
-    {
-      type: DataTypes.BOOLEAN
-      // allowNull: false,
-      // len: [1]
-    },
-    downvote:
-    {
-      type: DataTypes.BOOLEAN
-      // allowNull: false,
-      // len: [1]
     }
   });
 

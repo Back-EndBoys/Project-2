@@ -6,13 +6,9 @@ $(document).ready(function() //Runs on page load.
   var blogContainer = $(".blog-container");
   var postCategorySelect = $("#category");
 
-  // Click events for the edit and delete buttons.
+  // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete); //Delete post when user clicks delete button.
   $(document).on("click", "button.edit", handlePostEdit); //Edit post when user clicks delete button.
-
-  // Click events for the vote buttons.
-  $(document).on("click", "button.upvote", handleUpvote); //Delete post when user clicks delete button.
-  $(document).on("click", "button.downvote", handleDownvote); //Edit post when user clicks delete button.
   
   // Variable to hold our posts.
   var posts;
@@ -92,14 +88,6 @@ $(document).ready(function() //Runs on page load.
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-info");
-
-    let downvoteBtn = $("<button>");
-    downvoteBtn.text("Downvote");
-    downvoteBtn.addClass("downvote btn btn-warning");
-
-    let upvoteBtn = $("<button>");
-    upvoteBtn.text("Upvote");
-    upvoteBtn.addClass("upvote btn btn-success");
     
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
@@ -122,13 +110,8 @@ $(document).ready(function() //Runs on page load.
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
     
-    newPostCardHeading.append(upvoteBtn);
-    //console.log("^UPVOTE^ button should be appended now!")
-    newPostCardHeading.append(downvoteBtn);
-    //console.log("vDOWNVOTEv button should be appended now!")
-    //newPostCardHeading.append(deleteBtn);
-    //newPostCardHeading.append(editBtn);
-    
+    newPostCardHeading.append(deleteBtn);
+    newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostAuthor);
     
@@ -153,34 +136,6 @@ $(document).ready(function() //Runs on page load.
       {
         getPosts(postCategorySelect.val() );
       });
-  }
-  
-  // This function handles upvoting an entry.
-  function handleUpvote()
-  {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-      console.log("currentPost: ", currentPost);
-      console.log("currentPost.id: ", currentPost.id);
-      currentPost.upvotes = true;
-      currentPost.downvotes = false;
-      //  console.log("currentPost.id.downvotes: " + currentPost.id.downvotes);
-      //  console.log("currentPost.id.upvotes: " + currentPost.id.upvotes);
-  }
-
-  // This function handles downvoting an entry.
-  function handleDownvote()
-  {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-      currentPost.downvotes = true;
-      currentPost.upvotes = false;
-      console.log("currentPost.id.downvotes: " + currentPost.downvotes);
-      console.log("currentPost.id.upvotes: " + currentPost.upvotes);
   }
   
   // This function figures out which post we want to delete and then calls deletePost.

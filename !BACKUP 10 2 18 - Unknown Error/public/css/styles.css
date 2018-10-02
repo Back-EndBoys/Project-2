@@ -11,8 +11,7 @@ form#cms {
 }
 
 .card-header button.delete,
-button.edit, button.upvote, button.downvote
-{
+button.edit {
   float: right;
   margin: 5px;
 }

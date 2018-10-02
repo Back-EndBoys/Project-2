@@ -123,12 +123,11 @@ $(document).ready(function() //Runs on page load.
     newPostTitle.append(newPostDate);
     
     newPostCardHeading.append(upvoteBtn);
-    //console.log("^UPVOTE^ button should be appended now!")
+    console.log("^UPVOTE^ button should be appended now!")
     newPostCardHeading.append(downvoteBtn);
-    //console.log("vDOWNVOTEv button should be appended now!")
-    //newPostCardHeading.append(deleteBtn);
-    //newPostCardHeading.append(editBtn);
-    
+    console.log("vDOWNVOTEv button should be appended now!")
+  //  newPostCardHeading.append(deleteBtn);
+//    newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostAuthor);
     
@@ -162,12 +161,8 @@ $(document).ready(function() //Runs on page load.
       .parent()
       .parent()
       .data("post");
-      console.log("currentPost: ", currentPost);
-      console.log("currentPost.id: ", currentPost.id);
-      currentPost.upvotes = true;
-      currentPost.downvotes = false;
-      //  console.log("currentPost.id.downvotes: " + currentPost.id.downvotes);
-      //  console.log("currentPost.id.upvotes: " + currentPost.id.upvotes);
+      // currentPost.id.upvotes++;
+  
   }
 
   // This function handles downvoting an entry.
@@ -177,10 +172,7 @@ $(document).ready(function() //Runs on page load.
       .parent()
       .parent()
       .data("post");
-      currentPost.downvotes = true;
-      currentPost.upvotes = false;
-      console.log("currentPost.id.downvotes: " + currentPost.downvotes);
-      console.log("currentPost.id.upvotes: " + currentPost.upvotes);
+      // currentPost.id.downvotes++;
   }
   
   // This function figures out which post we want to delete and then calls deletePost.

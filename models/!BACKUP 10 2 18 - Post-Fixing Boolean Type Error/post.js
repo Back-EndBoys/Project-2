@@ -19,13 +19,13 @@ module.exports = function(sequelize, DataTypes)
       allowNull: false,
       len: [1]
     },
-    upvote:
+    upvotes:
     {
       type: DataTypes.BOOLEAN
       // allowNull: false,
       // len: [1]
     },
-    downvote:
+    downvotes:
     {
       type: DataTypes.BOOLEAN
       // allowNull: false,
