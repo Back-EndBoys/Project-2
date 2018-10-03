@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // Getting references to the name input and author container, as well as the table body
+  // Getting references to the name input and author container, as well as the table body dont change
   var nameInput = $("#author-name");
   var authorList = $("tbody");
   var authorContainer = $(".author-container");
