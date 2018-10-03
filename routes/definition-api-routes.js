@@ -23,9 +23,9 @@ module.exports = function(app) {
     // In this case, just db.Author
     db.Post.findAll({
       where: query,
-      include: [db.Author]
-    }).then(function(dbPost) {
-      res.json(dbPost);
+      include: [db.UserName]
+    }).then(function(x) {
+      res.json(x);
     });
   });
 
@@ -38,40 +38,40 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Author]
-    }).then(function(dbPost) {
-      res.json(dbPost);
+      include: [db.UserName]
+    }).then(function(x) {
+      res.json(x);
     });
   });
 
   // POST route for saving a new post
   app.post("/api/definition", function(req, res) {
-    db.Post.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+    db.Definition.create(req.body).then(function(x) {
+      res.json(x);
     });
   });
 
-  // DELETE route for deleting definition
-  app.delete("/api/definition/:id", function(req, res) {
-    db.Post.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  // // DELETE route for deleting definition
+  // app.delete("/api/definition/:id", function(req, res) {
+  //   db.Post.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // }); dont need to delete definitions
 
   // PUT route for updating definition
-  app.put("/api/definition", function(req, res) {
-    db.Post.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  // app.put("/api/definition", function(req, res) {
+  //   db.Post.update(
+  //     req.body,
+  //     {
+  //       where: {
+  //         id: req.body.id
+  //       }
+  //     }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // }); probably dont need to allow edits to definitions
 };

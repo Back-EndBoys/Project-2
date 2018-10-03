@@ -25,8 +25,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Definition.associate = function(models) {
-    // We're saying that a Definition should belong to an Author
-    // A Definition can't be created without an Author due to the foreign key constraint
+    // We're saying that a Definition should belong to a UserName
+    // A Definition can't be created without an UserName due to the foreign key constraint
     Definition.belongsTo(models.Author, {
       foreignKey: {
         allowNull: false
