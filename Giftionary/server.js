@@ -10,6 +10,7 @@ var cookieSession = require('cookie-session');
 var passport = require('passport');
 
 var keys = require('./config/keys');
+var authRoutes = require('./routes/auth-routes');
 
 // Sets up the Express App
 // =============================================================
