@@ -32,9 +32,10 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-    Definiton.belongsToMany(models.votes, {
-      through: models.votes
-    });
+
+    // Definiton.belongsToMany(models.votes, {
+    //   through: models.votes
+    // });
   };
 
   return Definition;

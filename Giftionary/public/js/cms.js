@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting jQuery references to the post body, title, form, and author select
   var bodyInput = $("#body");
   var titleInput = $("#title");
@@ -15,17 +15,17 @@ $(document).ready(function() {
 
   // If we have this section in our url, we pull out the post id from the url
   // In '?post_id=1', postId is 1
-  if (url.indexOf("?post_id=") !== -1) {
+  if (url.indexOf("?definiton_id=") !== -1) {
     postId = url.split("=")[1];
-    getPostData(postId, "post");
+    getDefinitionData(definitionId, "definition");
   }
   // Otherwise if we have an author_id in our url, preset the author select box to be our Author
-  else if (url.indexOf("?author_id=") !== -1) {
-    authorId = url.split("=")[1];
+  else if (url.indexOf("?userName_id=") !== -1) {
+    userNameId = url.split("=")[1];
   }
 
   // Getting the authors, and their posts
-  getAuthors();
+  getUserNames();
 
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
@@ -35,54 +35,60 @@ $(document).ready(function() {
       return;
     }
     // Constructing a newPost object to hand to the database
-    var newPost = {
+    var newDefinition = {
       title: titleInput
         .val()
         .trim(),
-      body: bodyInput
+      definition: definitionInput
         .val()
         .trim(),
-      AuthorId: authorSelect.val()
+      use: useInput
+        .val()
+        .trim(),
+      tags: tagsInput
+        .val()
+        .trim(),
+      AuthorId: authorSelect.val() //change this to use the login creditials
     };
 
     // If we're updating a post run updatePost to update a post
     // Otherwise run submitPost to create a whole new post
     if (updating) {
-      newPost.id = postId;
-      updatePost(newPost);
+      newDefinition.id = definitionId;
+      updateDefinition(newDefinition);
     }
     else {
-      submitPost(newPost);
+      submitDefinition(newDefinition);
     }
   }
 
   // Submits a new post and brings user to blog page upon completion
-  function submitPost(post) {
-    $.post("/api/posts", post, function() {
+  function submitDefinition(definition) {
+    $.post("/api/definitons", definition, function () {
       window.location.href = "/blog";
     });
   }
 
   // Gets post data for the current post if we're editing, or if we're adding to an author's existing posts
-  function getPostData(id, type) {
+  function getDefinitionData(id, type) {
     var queryUrl;
     switch (type) {
-    case "post":
-      queryUrl = "/api/posts/" + id;
-      break;
-    case "author":
-      queryUrl = "/api/authors/" + id;
-      break;
-    default:
-      return;
+      case "post":
+        queryUrl = "/api/definitions/" + id;
+        break;
+      case "UserName":
+        queryUrl = "/api/UserNames/" + id;
+        break;
+      default:
+        return;
     }
-    $.get(queryUrl, function(data) {
+    $.get(queryUrl, function (data) {
       if (data) {
-        console.log(data.AuthorId || data.id);
+        console.log(data.UserNameId || data.id);
         // If this post exists, prefill our cms forms with its data
         titleInput.val(data.title);
         bodyInput.val(data.body);
-        authorId = data.AuthorId || data.id;
+        userNameId = data.UserNameId || data.id;
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
@@ -91,14 +97,14 @@ $(document).ready(function() {
   }
 
   // A function to get Authors and then render our list of Authors
-  function getAuthors() {
-    $.get("/api/authors", renderAuthorList);
+  function getUserNames() {
+    $.get("/api/userNames", renderUserNameList);
   }
   // Function to either render a list of authors, or if there are none, direct the user to the page
   // to create an author first
-  function renderAuthorList(data) {
+  function renderUserNameList(data) {
     if (!data.length) {
-      window.location.href = "/authors";
+      window.location.href = "/userNames";
     }
     $(".hidden").removeClass("hidden");
     var rowsToAdd = [];
@@ -115,19 +121,19 @@ $(document).ready(function() {
   // Creates the author options in the dropdown
   function createAuthorRow(author) {
     var listOption = $("<option>");
-    listOption.attr("value", author.id);
-    listOption.text(author.name);
+    listOption.attr("value", userName.id);
+    listOption.text(userName.name);
     return listOption;
   }
 
   // Update a given post, bring user to the blog page when done
-  function updatePost(post) {
+  function updateDefinition(definition) {
     $.ajax({
       method: "PUT",
-      url: "/api/posts",
-      data: post
+      url: "/api/definitions",
+      data: definition
     })
-      .then(function() {
+      .then(function () {
         window.location.href = "/blog";
       });
   }

@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var UserName = sequelize.define("UserName", {
     // Giving the UserName model a name of type STRING
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    googleID: DataTypes.STRING
   });
 
   UserName.associate = function(models) {
@@ -10,9 +11,9 @@ module.exports = function(sequelize, DataTypes) {
     UserName.hasMany(models.Post, {
       onDelete: "cascade"
     });
-    Definiton.belongsToMany(models.votes, {
-      through: models.votes
-    });
+    // Definiton.belongsToMany(models.votes, {
+    //   through: models.votes
+    // });
   };
 
   return UserName;
