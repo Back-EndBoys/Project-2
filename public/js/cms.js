@@ -74,7 +74,7 @@ $(document).ready(function () {
     var queryUrl;
     switch (type) {
       case "post":
-        queryUrl = "/api/posts/" + id;
+        queryUrl = "/api/definitions/" + id;
         break;
       case "UserName":
         queryUrl = "/api/UserNames/" + id;
@@ -104,7 +104,7 @@ $(document).ready(function () {
   // to create an author first
   function renderUserNameList(data) {
     if (!data.length) {
-      window.location.href = "/authors";
+      window.location.href = "/userNames";
     }
     $(".hidden").removeClass("hidden");
     var rowsToAdd = [];
@@ -121,17 +121,17 @@ $(document).ready(function () {
   // Creates the author options in the dropdown
   function createAuthorRow(author) {
     var listOption = $("<option>");
-    listOption.attr("value", author.id);
-    listOption.text(author.name);
+    listOption.attr("value", userName.id);
+    listOption.text(userName.name);
     return listOption;
   }
 
   // Update a given post, bring user to the blog page when done
-  function updatePost(post) {
+  function updateDefinition(definition) {
     $.ajax({
       method: "PUT",
-      url: "/api/posts",
-      data: post
+      url: "/api/definitions",
+      data: definition
     })
       .then(function () {
         window.location.href = "/blog";
