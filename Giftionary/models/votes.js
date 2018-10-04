@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: null,
         }
-    },{
+    }, {
             freezeTableName: true
         });
     return Votes;
