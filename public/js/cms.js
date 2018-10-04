@@ -48,6 +48,9 @@ $(document).ready(function () {
       tags: tagsInput
         .val()
         .trim(),
+      link: linkinput
+        .val()
+        .trim(),
       AuthorId: authorSelect.val() //change this to use the login creditials
     };
 

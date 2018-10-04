@@ -7,12 +7,13 @@ module.exports = function(sequelize, DataTypes) {
   UserName.associate = function(models) {
     // Associating UserName with definitions
     // When an UserName is deleted, also delete any associated definitions
-    UserName.hasMany(models.Post, {
+   UserName.belongsToMany(models.Definition, {
+      through: models.Votes
+    });
+    UserName.hasMany(models.Definition, {
       onDelete: "cascade"
     });
-    Definiton.belongsToMany(models.votes, {
-      through: models.votes
-    });
+    
   };
 
   return UserName;

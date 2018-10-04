@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Definition = sequelize.define("Definition", {
     title: {
       type: DataTypes.STRING,
@@ -12,29 +12,35 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
-    use:{
+    use: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
     },
-    tags:{
+    tags: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      len: [1]
+    },
+    link: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
     }
   });
 
-  Definition.associate = function(models) {
+  Definition.associate = function (models) {
     // We're saying that a Definition should belong to a UserName
     // A Definition can't be created without an UserName due to the foreign key constraint
-    Definition.belongsTo(models.Author, {
+    Definition.belongsToMany(models.UserName, {
+      through: models.Votes
+    });
+    Definition.belongsTo(models.UserName, {
       foreignKey: {
         allowNull: false
       }
     });
-    Definiton.belongsToMany(models.votes, {
-      through: models.votes
-    });
+
   };
 
   return Definition;
