@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CMS - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+</head>
+
+<body>
+  <div class='row valign-wrapper'>
+    <nav id='smallSearchBar' class='col s3 blue-grey lighten-4 hoverable'>
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <div class='col s3 offset-s1'>
+        <h1 style='font-family: Cinzel'>.GIFtionary</h1>
+    </div>
+    <div class="offset-s1 input-field col s2">
+      <input id="username" type="text" class="validate center-align">
+      <label for="username">User Name</label>
+    </div>
+
+    <div class="input-field col s1">
+      <input id="password" type="text" class="validate">
+      <label for="password">Password</label>
+    </div>
+
+    <button id='submitButton' class="btn waves-effect waves-dark col s1 blue-grey lighten-3 hoverable" type="submit" name="action">Submit
+      <i class="material-icons right">check</i>
+    </button>
+  </div>
+  <div class='container'>
+    <!--Left this code here for the line spacing-->
+    <div class='row'>
+      <div class=''>
+        <h1 id='gifName'>GIFname</h1>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col s4'>
+        <img src='https://via.placeholder.com/300x300'>
+      </div>
+      <div class='col s8'>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+           aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+      </div>
+    </div>
+    <div id='tags' class='chip hoverable waves-darken'>
+      Example Tags
+    </div>
+  </div>
+
+  <!-- Custom Script -->
+  <!-- <script src="js/author.js" type="text/javascript"></script> -->
+  <!-- <script src='js/background.js' type='text/javascript'></script> -->
+</body>
+
+</html>
