@@ -30,12 +30,6 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Definition.associate = function(models) {
-<<<<<<< HEAD
-    // We're saying that a Definition should belong to an Author
-    // A Definition can't be created without an Author due to the foreign key constraint
-    Definition.belongsTo(models.Author, {
-      foreignKey: {
-=======
     // We're saying that a Definition should belong to a UserName
     // A Definition can't be created without an UserName due to the foreign key constraint
     Definition.belongsToMany(models.UserName, {
@@ -43,17 +37,10 @@ module.exports = function(sequelize, DataTypes) {
     });
     Definition.belongsTo(models.UserName, {
       foreignKey:{
->>>>>>> origin/development
         allowNull: false
       }
     });
 
-<<<<<<< HEAD
-    // Definiton.belongsToMany(models.votes, {
-    //   through: models.votes
-    // });
-=======
->>>>>>> origin/development
   };
 
   return Definition;

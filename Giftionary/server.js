@@ -9,6 +9,7 @@ var bodyParser = require("body-parser");
 var cookieSession = require('cookie-session');
 var passport = require('passport');
 
+var passportSetup = require('./config/passport-setup');
 var keys = require('./config/keys');
 var authRoutes = require('./routes/auth-routes');
 
@@ -47,6 +48,7 @@ app.use('/auth', authRoutes);
 require("./routes/html-routes.js")(app);
 require("./routes/author-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
+require("./routes/userName-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
