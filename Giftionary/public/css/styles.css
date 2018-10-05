@@ -3,28 +3,28 @@ body {
   filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#D7CEB2', endColorstr='#A59E8C');
   background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #D7CEB2), color-stop(100%, #A59E8C));
-  background-image: -webkit-linear-gradient(135deg, #D7CEB2, #A59E8C);
-  background-image: -moz-linear-gradient(45deg, #D7CEB2, #A59E8C);
-  background-image: -ms-linear-gradient(45deg, #D7CEB2 0, #A59E8C 100%);
-  background-image: -o-linear-gradient(45deg, #D7CEB2, #A59E8C);
-  background-image: linear-gradient(135deg, #D7CEB2, #A59E8C);
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #9F9792), color-stop(100%, #9F9792));
+  background-image: -webkit-linear-gradient(135deg, #9F9792, #9F9792);
+  background-image: -moz-linear-gradient(45deg, #9F9792, #9F9792);
+  background-image: -ms-linear-gradient(45deg, #9F9792 0, #9F9792 100%);
+  background-image: -o-linear-gradient(45deg, #9F9792, #9F9792);
+  background-image: linear-gradient(135deg, #9F9792, #9F9792);
   text-align: center;
   margin: 0px;
   overflow: hidden;
 }
 
 #submitButton {
-  margin-right: 7px;
-  margin-left: 7px;
+  margin: 7px;
 }
 
 #smallSearchBar {
   margin-left: 7px;
+  background-color: #8D8580 !important;
 }
 
 #newGif {
-  margin-top: 400 px;
+  margin: 7px;
 }
 
 #searchBar {
@@ -37,4 +37,13 @@ color: white !important;
 
 #password {
   color: white;
+}
+
+#searchButton {
+  margin: 7px;
+}
+
+gifDisplay{
+  max-height: 300px;
+  max-width: 300px;
 }
