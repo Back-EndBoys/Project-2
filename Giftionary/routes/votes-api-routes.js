@@ -8,8 +8,8 @@ module.exports = function(app) {
         where: {
           id: req.body.id
         }
-      }).then(function(dbPost) {
-      res.json(dbPost);
+      }).then(function(x) {
+      res.json(x);
     });
   });
 }

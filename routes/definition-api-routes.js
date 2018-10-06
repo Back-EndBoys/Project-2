@@ -28,13 +28,23 @@ module.exports = function(app) {
       res.json(x);
     });
   });
-
+  // get definition by title
+  app.get("/api/definitions/:title", function(req, res) {
+    db.Definition.findOne({
+      where: {
+        title: req.params.title
+      },
+      include: [db.UserName]
+    }).then(function(x) {
+      res.json(x);
+    });
+  });
   // Get route for retrieving a single post
   app.get("/api/definitions/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
-    db.Post.findOne({
+    db.Definition.findOne({
       where: {
         id: req.params.id
       },
@@ -45,7 +55,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/definition", function(req, res) {
+  app.post("/api/definitions", function(req, res) {
     db.Definition.create(req.body).then(function(x) {
       res.json(x);
     });
