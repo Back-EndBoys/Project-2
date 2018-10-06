@@ -2,3 +2,5 @@
 DROP DATABASE IF EXISTS giftionary;
 -- Creates the "blogger" database --
 CREATE DATABASE giftionary;
+
+
