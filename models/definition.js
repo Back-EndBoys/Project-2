@@ -31,14 +31,14 @@ module.exports = function(sequelize, DataTypes) {
   Definition.associate = function(models) {
     // We're saying that a Definition should belong to a UserName
     // A Definition can't be created without an UserName due to the foreign key constraint
-    // Definition.belongsToMany(models.UserName, {
-    //   through: models.Votes
-    // });
-    // Definition.belongsTo(models.UserName, {
-    //   foreignKey:{
-    //     allowNull: false
-    //   }
-    // });
+    Definition.belongsToMany(models.UserName, {
+      through: models.Votes
+    });
+    Definition.belongsTo(models.UserName, {
+      foreignKey:{
+        allowNull: false
+      }
+    });
 
   };
 

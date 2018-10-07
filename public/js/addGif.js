@@ -47,8 +47,9 @@ $(document).ready(function () {
         .val()
         .trim(),
       link: imgId,
-      UserNameID: "1" //change this to use the login creditials
+      UserNameID: 1 //change this to use the login creditials
     };
+    console.log(newDefinition.UserNameID)
 
     // If we're updating a post run updatePost to update a post
     // Otherwise run submitPost to create a whole new post

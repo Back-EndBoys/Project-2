@@ -39,6 +39,18 @@ module.exports = function(app) {
       res.json(x);
     });
   });
+ 
+  app.get("/api/definitions/:tags", function(req, res) {
+    db.Definition.findAll({
+      where: {
+        tags: req.params.tags
+      },
+      include: [db.UserName]
+    }).then(function(x) {
+      res.json(x);
+    });
+  });
+  
   // Get route for retrieving a single post
   app.get("/api/definitions/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
