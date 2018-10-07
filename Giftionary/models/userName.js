@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       through: models.Votes
     });
     UserName.hasMany(models.Definition, {
-      onDelete: "cascade"
+      
     });
     
   };

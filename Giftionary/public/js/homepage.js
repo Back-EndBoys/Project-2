@@ -9,18 +9,18 @@ $(searchBar).on("click", search)
      title = title.val().trim()
     $.ajax({
       method: "GET",
-      url: "/api/definitions/" + title
-    })
-      .then(function(res) {
-          console.log(res)
-          if(res){
-            location.href = "gifDisplay.html"
-        //   dom change here
-        // getPosts(postCategorySelect.val());
-          }
-          else{
-            location.href = "addGif.html"
-          }
+      url: "/api/definitions/:" + title
+    // })
+    //   .then(function(res) {
+    //       console.log(res)
+    //       if(res){
+    //         location.href = "gifDisplay.html"
+    //     //   dom change here
+    //     // getPosts(postCategorySelect.val());
+    //       }
+    //       else{
+    //         location.href = "addGif.html"
+    //       }
       });
   };
   addGif.on("click", link)

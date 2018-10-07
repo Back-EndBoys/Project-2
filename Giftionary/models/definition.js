@@ -34,11 +34,11 @@ module.exports = function(sequelize, DataTypes) {
     // Definition.belongsToMany(models.UserName, {
     //   through: models.Votes
     // });
-    // Definition.belongsTo(models.UserName, {
-    //   foreignKey:{
-    //     allowNull: false
-    //   }
-    // });
+    Definition.belongsTo(models.UserName, {
+      foreignKey:{
+        allowNull: false
+      }
+    });
 
   };
 
