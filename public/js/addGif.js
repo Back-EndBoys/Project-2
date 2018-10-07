@@ -47,7 +47,7 @@ $(document).ready(function () {
         .val()
         .trim(),
       link: imgId,
-      UserNameID: 1 //change this to use the login creditials
+      UserNameId: 1 //change this to use the login creditials
     };
     console.log(newDefinition.UserNameID)
 

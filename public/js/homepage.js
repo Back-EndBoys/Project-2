@@ -11,12 +11,9 @@ $(document).ready(function() {
     console.log(searchInput.val());
   
      title = searchInput.val().trim()
-    $.ajax({
-      method: "GET",
-      url: "localhost://8080/api/definitions/:"+title
-    })
+     $.get("/api/definitions/:title", renderSearch)
       .then(function(res) {
-          console.log(res)
+          console.log(res) //NEED TO FIGURE OUT WHY WE DONT GET A RESPONSE
           // if(res){
           //   location.href = "gifDisplay.html"
           //   console.log(res)
@@ -49,8 +46,17 @@ $(document).ready(function() {
   //         }
   //     });
   // };
-  addGif.on("click", link)
-  function link (){
-      location.href = "addGif.html"
-  }
+  // addGif.on("click", link)
+  // function link (){
+  //     location.href = "addGif.html"
+  // };
+  // function renderSearch (data){
+  //   console.log ("right here bitch", data)
+  // }
+  // function getSearch (){
+  //   $.get("/api/definitions/:title", function (data){
+  //     console.log("THIS IS THE DATA", data)
+  //   })
+  // }
+  // getSearch();
 })
