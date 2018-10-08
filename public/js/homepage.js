@@ -63,7 +63,7 @@ $(document).ready(function () {
       window.location.href = "/gifDisplay.html";
     }
     else {
-    window.location.href = "/GifDisplayAll.html";
+    window.location.href = "/gifDisplayAll.html";
     }
   }
   // function getSearch (){
