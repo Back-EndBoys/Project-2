@@ -13,18 +13,23 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the definition
+  // app.get("/api/definitions", function(req, res) {
+  //   var query = {};
+  //   if (req.query.author_id) {
+  //     query.AuthorId = req.query.author_id;
+  //   }
+  //   // Here we add an "include" property to our options in our findAll query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.Author
+  //   db.Post.findAll({
+  //     where: query,
+  //     include: [db.UserName]
+  //   }).then(function(x) {
+  //     res.json(x);
+  //   });
+  // });
   app.get("/api/definitions", function(req, res) {
-    var query = {};
-    if (req.query.author_id) {
-      query.AuthorId = req.query.author_id;
-    }
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Post.findAll({
-      where: query,
-      include: [db.UserName]
-    }).then(function(x) {
+    db.Definition.findAll().then(function(x) {
       res.json(x);
     });
   });
@@ -34,37 +39,37 @@ module.exports = function(app) {
       where: {
         title: req.params.title
       },
-      include: [db.UserName]
+      // include: [db.UserName]
     }).then(function(x) {
       res.json(x);
     });
   });
  
-  app.get("/api/definitions/:tags", function(req, res) {
-    db.Definition.findAll({
-      where: {
-        tags: req.params.tags
-      },
-      include: [db.UserName]
-    }).then(function(x) {
-      res.json(x);
-    });
-  });
+  // app.get("/api/definitions/:tags", function(req, res) {
+  //   db.Definition.findAll({
+  //     where: {
+  //       tags: req.params.tags
+  //     },
+  //     include: [db.UserName]
+  //   }).then(function(x) {
+  //     res.json(x);
+  //   });
+  // });
   
   // Get route for retrieving a single post
-  app.get("/api/definitions/:id", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Definition.findOne({
-      where: {
-        id: req.params.id
-      },
-      include: [db.UserName]
-    }).then(function(x) {
-      res.json(x);
-    });
-  });
+  // app.get("/api/definitions/:id", function(req, res) {
+  //   // Here we add an "include" property to our options in our findOne query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.Author
+  //   db.Definition.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     },
+  //     include: [db.UserName]
+  //   }).then(function(x) {
+  //     res.json(x);
+  //   });
+  // });
 
   // POST route for saving a new post
   app.post("/api/definitions", function(req, res) {
