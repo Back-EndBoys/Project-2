@@ -32,7 +32,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/GifDisplay.html"));
   });
   app.get("/allGifs", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/allGifsDisplay.html"));
+    res.sendFile(path.join(__dirname, "../public/allGifDisplay.html"));
   });
 
 

@@ -61,8 +61,10 @@ $(document).ready(function () {
   function renderSearch(data) {
     if (data) {
       window.location.href = "/gifDisplay.html";
-    };
-    window.location.href = "/allGifDisplay.html";
+    }
+    else {
+    window.location.href = "/GifDisplayAll.html";
+    }
   }
   // function getSearch (){
   //   $.get("/api/definitions/:title", function (data){
