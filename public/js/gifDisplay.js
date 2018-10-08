@@ -9,14 +9,14 @@ var definition = $('#definition')
 var tags = $('#tags')
 var gif = $('#gif')
 
-var queryURL = "http://cors.io/?http://api.giphy.com/v1/gifs/"+searchObject.link+"?api_key=dc6zaTOxFJmzC";
+// var queryURL = "http://cors.io/?http://api.giphy.com/v1/gifs/"+searchObject.link+"?api_key=dc6zaTOxFJmzC";
 
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function(response) {
-  console.log(response);
-});
+// $.ajax({
+//   url: queryURL,
+//   method: "GET"
+// }).then(function(response) {
+//   console.log(response);
+// });
 
 gifName.append(searchObject.title);
 definition.append(searchObject.definition);

@@ -54,15 +54,15 @@ $(document).ready(function () {
   //         }
   //     });
   // };
-  // addGif.on("click", link)
-  // function link (){
-  //     location.href = "addGif.html"
-  // };
+  addGif.on("click", link)
+  function link (){
+      location.href = "addGif.html"
+  };
   function renderSearch(data) {
     if (data) {
       window.location.href = "/gifDisplay.html";
     };
-    // window.location.href = "/allGifDisplay.html";
+    window.location.href = "/allGifDisplay.html";
   }
   // function getSearch (){
   //   $.get("/api/definitions/:title", function (data){

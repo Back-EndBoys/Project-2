@@ -1,41 +1,18 @@
-/* body {
-  background-color: #193c6d;
-  filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
-  background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
-  background-image: -webkit-linear-gradient(135deg, #003073, #029797);
-  background-image: -moz-linear-gradient(45deg, #003073, #029797);
-  background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%);
-  background-image: -o-linear-gradient(45deg, #003073, #029797);
-  background-image: linear-gradient(135deg, #003073, #029797);
-  text-align: center;
-  margin: 0px;
-  overflow: hidden;
-}
-
-#submitButton {
-  margin-right: 7px;
-  margin-left: 7px;
-}
-
-#smallSearchBar {
-  margin-left: 7px;
-} */
 body {
   background-color: #193c6d;
   filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#D7CEB2', endColorstr='#A59E8C');
   background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, black), color-stop(100%, black));
-  background-image: -webkit-linear-gradient(135deg, black, black);
-  background-image: -moz-linear-gradient(45deg, black, black);
-  background-image: -ms-linear-gradient(45deg, black 0, black 100%);
-  background-image: -o-linear-gradient(45deg, black, black);
-  background-image: linear-gradient(135deg, black, black);
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #757269), color-stop(100%, #757269));
+  background-image: -webkit-linear-gradient(135deg, #757269, #757269);
+  background-image: -moz-linear-gradient(45deg, #757269, #757269);
+  background-image: -ms-linear-gradient(45deg, #757269 0, #757269 100%);
+  background-image: -o-linear-gradient(45deg, #757269, #757269);
+  background-image: linear-gradient(135deg, #757269, #757269);
   text-align: center;
   margin: 0px;
-  overflow: hidden;
+  overflow: scroll;
+ 
  }
  
  #submitButton {
@@ -44,7 +21,6 @@ body {
  
  #smallSearchBar {
   margin-left: 7px;
-  background-color: #8D8580 !important;
  }
  
  #newGif {
@@ -52,15 +28,15 @@ body {
  }
  
  #searchBar {
-  background-color: #A59E8C !important;
+  background-color: #A59E8C;
  }
  
  #username {
- color: white !important;
+ visibility: hidden;
  }
  
  #password {
-  color: white;
+ visibility: hidden;
  }
  
  #searchButton {

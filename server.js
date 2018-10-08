@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var axios= require('axios')
 
 // Sets up the Express App
 // =============================================================
@@ -24,6 +25,17 @@ app.use(bodyParser.json());
 
 // Static directory
 app.use(express.static("public"));
+app.get('/api/gifs/:id', function(request, res){
+  
+axios.get('http://cors.io/?http://api.giphy.com/v1/gifs/'+request.params.id+'?api_key=dc6zaTOxFJmzC')
+.then(function (response) {
+  res.send(response)
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+})
 
 // Routes
 // =============================================================
